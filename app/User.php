@@ -8,6 +8,9 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+/**
+ * @method static User create(array $attrs)
+ */
 class User extends Authenticatable implements MustVerifyEmail
 {
   use Notifiable, Roleable, Permissionable;

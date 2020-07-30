@@ -53,12 +53,12 @@ class Admin extends Authenticatable
   ];
 
   /**
-   * posts relation
+   * news relation
    *
    * @return HasMany
    */
-  public function posts(): HasMany
+  public function news(): HasMany
   {
-    return $this->hasMany(Post::class, 'admin_id', 'id');
+    return $this->hasMany(News::class, 'admin_id', 'id');
   }
 }

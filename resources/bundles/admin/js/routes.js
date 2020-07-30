@@ -3,9 +3,9 @@ import NavBar from "./components/NavBar";
 
 import Login from "./pages/auth/Login";
 import Dashboard from "./pages/Dashboard";
-import PostsIndex from "./pages/posts/Index";
-import PostsCreate from "./pages/posts/Create";
-import PostsUpdate from "./pages/posts/Update";
+import NewsIndex from "./pages/news/Index";
+import NewsCreate from "./pages/news/Create";
+import NewsUpdate from "./pages/news/Update";
 
 const routes = [
   {
@@ -28,7 +28,7 @@ const routes = [
     components: {
       appbar: AppBar,
       navbar: NavBar,
-      default: PostsIndex
+      default: NewsIndex
     }
   },
   {
@@ -37,16 +37,16 @@ const routes = [
     components: {
       appbar: AppBar,
       navbar: NavBar,
-      default: PostsCreate
+      default: NewsCreate
     }
   },
   {
-    path: '/news/:id(\\+d)',
-    name: 'admin.news.update',
+    path: '/news/:id(\\d+)/edit',
+    name: 'admin.news.edit',
     components: {
       appbar: AppBar,
       navbar: NavBar,
-      default: PostsUpdate
+      default: NewsUpdate
     }
   },
 ];

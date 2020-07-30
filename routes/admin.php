@@ -10,4 +10,4 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('dashboard', 'DashboardController@index');
 
-Route::resource('news', 'PostsController');
+Route::resource('news', 'NewsController');

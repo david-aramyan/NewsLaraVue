@@ -6,6 +6,7 @@
       <w>axios</w>
       <w>csrf</w>
       <w>fillable</w>
+      <w>formdata</w>
       <w>gstatic</w>
       <w>navbar</w>
       <w>permissionable</w>

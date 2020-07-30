@@ -59,4 +59,6 @@ const go = function (name, params = {}, query = {}) {
   return this.$router.resolve({name, params, query}).href;
 };
 
-export { auth, csrf, go};
+const redirect = href => window.location.replace(href);
+
+export { auth, csrf, go, redirect };
