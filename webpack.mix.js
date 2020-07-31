@@ -19,7 +19,6 @@ const mix = require('laravel-mix');
 //       chunkFilename: 'admin/js/chunk/[name].js',
 //     }
 //   });
-// mix.sourceMaps()
 
 /* Client bundle */
 mix

@@ -13,7 +13,10 @@ class AdminsTableSeeder extends Seeder
    */
   public function run()
   {
-    factory(Admin::class, 1)->create()->each(function (Admin $admin) {
+    factory(Admin::class, 1)->create([
+      'email' => 'admin@news.com',
+      'username' => 'admin-news'
+    ])->each(function (Admin $admin) {
       $admin->roles()->attach(Role::find(1));
     });
   }
