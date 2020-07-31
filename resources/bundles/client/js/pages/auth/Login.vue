@@ -1,7 +1,7 @@
 <template>
   <v-container fluid fill-height>
     <v-row align="center" justify="center">
-      <v-col cols="12" xs="4" sm="8" md="4" lg="4">
+      <v-col cols="12" xs="4" sm="8" md="6" lg="4">
         <v-card :loading="loading">
           <v-card-title>
             <v-btn :href="$go('news.index')" icon>
@@ -13,7 +13,6 @@
 
           <ValidationObserver ref="form" v-slot="{ invalid }">
             <v-form ref="login" method="post" action="/login">
-
               <input type="hidden" name="_token" :value="$csrf">
 
               <v-card-text>
@@ -57,6 +56,13 @@
                   />
                 </ValidationProvider>
               </v-card-text>
+
+              <v-card-text>
+                <a href="/password/reset">
+                  Forgot your password?
+                </a>
+              </v-card-text>
+
               <v-card-actions>
                 <v-btn :href="$go('register')" color="primary" text>
                   Create an account

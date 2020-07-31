@@ -88,15 +88,7 @@
 <script>
   import { isEmpty } from "lodash";
   import { Register } from "../../forms/Register";
-  import { ValidationObserver, ValidationProvider, extend } from "vee-validate";
-
-  extend('password', {
-    params: ['target'],
-    validate(value, { target }) {
-      return value === target;
-    },
-    message: 'Password confirmation does not match'
-  });
+  import { ValidationObserver, ValidationProvider } from "vee-validate";
 
   export default {
     name: "Register",

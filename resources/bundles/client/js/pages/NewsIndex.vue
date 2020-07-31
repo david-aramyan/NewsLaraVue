@@ -56,7 +56,7 @@
       loading: true
     }),
     mounted() {
-      window.onload = () => setTimeout(() => this.loading = false, 1500);
+      window.onload = () => this.loading = false;
     }
   }
 </script>

@@ -4,6 +4,15 @@ import { messages } from 'vee-validate/dist/locale/en.json';
 
 Object.keys(rules).forEach(rule => extend(rule, { ...rules[rule], message: messages[rule] }));
 
+extend('password', {
+  params: ['target'],
+  validate(value, { target }) {
+    return value === target;
+  },
+  message: 'Password confirmation does not match'
+});
+
+
 const meta = document.head.querySelector('meta[name="csrf-token"]');
 const app = document.getElementById('app');
 

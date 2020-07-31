@@ -6,7 +6,15 @@
 
     <v-spacer/>
 
-    <v-toolbar-items>
+    <v-toolbar-items v-if="auth.check">
+      <form ref="logout" action="/logout" method="post" style="display: none">
+        <input type="hidden" name="_token" :value="$csrf">
+      </form>
+
+      <v-btn color="primary" @click="logout" text>Logout</v-btn>
+    </v-toolbar-items>
+
+    <v-toolbar-items v-else>
       <v-btn :href="$go('login')" color="primary" text>Login</v-btn>
       <v-btn :href="$go('register')" color="primary" text>Register</v-btn>
     </v-toolbar-items>
@@ -15,7 +23,17 @@
 
 <script>
   export default {
-    name: "AppBar"
+    name: "AppBar",
+    computed: {
+      auth() {
+        return this.$store.state.auth;
+      }
+    },
+    methods: {
+      logout() {
+        this.$refs.logout.submit();
+      }
+    }
   }
 </script>
 

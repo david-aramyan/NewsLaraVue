@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/', 'NewsController@index')->name('news.index');
 Route::get('news/{news}', 'NewsController@show')->name('news.show');
